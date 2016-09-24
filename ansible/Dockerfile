@@ -1,6 +1,6 @@
 FROM centos:centos7
 
-MAINTAINER Camille Meulien <cmeulien@heliostech.fr>
+MAINTAINER Patrick M. Slattery <patrickmslattery@mac.com>
 
 #
 # Ansible and misc tools setup
