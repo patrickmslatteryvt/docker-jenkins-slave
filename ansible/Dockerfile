@@ -5,6 +5,10 @@ MAINTAINER Patrick M. Slattery <patrickmslattery@mac.com>
 #
 # Ansible and misc tools setup
 #
+ENV HOME=/home/jenkins-slave \
+    JENKINS_SWARM_VERSION=2.2 \
+    JENKINS_SWARM_JAR_PATH=/usr/share/jenkins
+ENV JENKINS_SWARM_JAR=${JENKINS_SWARM_JAR_PATH}/swarm-client-${JENKINS_SWARM_VERSION}-jar-with-dependencies.jar
 
 RUN yum install -y \
     ansible \
@@ -16,10 +20,6 @@ RUN yum install -y \
 # Jenkins Slave setup
 #
 
-ENV JENKINS_SWARM_VERSION=2.2
-ENV HOME=/home/jenkins-slave
-ENV JENKINS_SWARM_JAR_PATH=/usr/share/jenkins
-ENV JENKINS_SWARM_JAR=$JENKINS_SWARM_JAR_PATH/swarm-client-$JENKINS_SWARM_VERSION-jar-with-dependencies.jar
 
 RUN yum install -y java-1.8.0-openjdk-headless \
     && useradd -d $HOME -m jenkins-slave \
