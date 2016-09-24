@@ -1,26 +1,25 @@
 Jenkins swarm slave with Ansible development environment
 ========================================================
 
-Start a [Jenkins swarm](https://wiki.jenkins-ci.org/display/JENKINS/Swarm+Plugin) slave with Ansible installed in Docker.
+Start a [Jenkins swarm](https://wiki.jenkins-ci.org/display/JENKINS/Swarm+Plugin) slave with the latest development version of Ansible installed in Docker.
 
 ### Start a slave
 
 ```
 docker run \
   --detach \
-  heliostech/jenkins-slave-ansible \
+  patrickmslatteryvt/jenkins-slave-ansible:devel-2.2.0 \
   -master http://jenkins-server/ \
   -username JENKINS_USER \
   -password JENKINS_USER_KEY \
   -executors 2 \
-  -labels "linux ansible"
+  -labels "linux ansible 2.2.0"
 ```
-
 
 ### Available Options
 
 Display the available options with the following command:
 
 ```
-docker run -it --rm heliostech/jenkins-slave-ansible -help
+docker run -it --rm patrickmslatteryvt/jenkins-slave-ansible -help
 ```
