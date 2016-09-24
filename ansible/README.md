@@ -8,7 +8,7 @@ Start a [Jenkins swarm](https://wiki.jenkins-ci.org/display/JENKINS/Swarm+Plugin
 ```
 docker run \
   --detach \
-  patrickmslatteryvt/jenkins-slave-ansible:devel-2.2.0 \
+  patrickmslatteryvt/docker-jenkins-slave:devel-2.2.0 \
   -master http://jenkins-server/ \
   -username JENKINS_USER \
   -password JENKINS_USER_KEY \
@@ -21,5 +21,5 @@ docker run \
 Display the available options with the following command:
 
 ```
-docker run -it --rm patrickmslatteryvt/jenkins-slave-ansible -help
+docker run -it --rm patrickmslatteryvt/docker-jenkins-slave -help
 ```
